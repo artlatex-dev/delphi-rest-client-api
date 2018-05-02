@@ -223,7 +223,7 @@ end;
 
 function THttpConnectionIndy.GetResponseHeader(const Header: string): string;
 begin
-  raise ENotSupportedException.Create('');
+  result := self.FIdHttp.Response.RawHeaders.Values[Header];
 end;
 
 function THttpConnectionIndy.GetVerifyCert: boolean;
